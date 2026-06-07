@@ -4,14 +4,16 @@ import NavBar from './components/NavBar'
 import { Route, Routes } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [show, setShow] = useState(true)
 
   return (
     <>
-    <NavBar/>
-     <Routes>
-      <Route path='/' element={<h1></h1>}  />
-     </Routes>
+    {
+      show ? <h1>Toggle In Js</h1> : null
+    }
+    
+    <button onClick={()=>setShow(!show)} >Toggle</button>
+    <button onClick={()=>setShow(true)} >Show</button>
     </>
   )
 }
